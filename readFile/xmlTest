@@ -1,0 +1,21 @@
+<?xml version = "1.0"?>
+<class>
+   <student id = "1">
+      <firstname>Vinh</firstname>
+      <lastname>Phan</lastname>
+      <marks>85</marks>
+   </student>
+   
+   <student id = "2">
+      <firstname>Van</firstname>
+      <lastname>Lam</lastname>
+      <marks>100</marks>
+   </student>
+   
+   <student id = "3">
+      <firstname>Mai</firstname>
+      <lastname>Van</lastname>
+      <marks>11</marks>
+   </student>
+    
+</class>
