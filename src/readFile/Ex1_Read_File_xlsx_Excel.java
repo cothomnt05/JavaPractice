@@ -9,7 +9,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class Ex1_Read_File_Excel {
+public class Ex1_Read_File_xlsx_Excel {
 	public static void main(String[] args) {
         try {
             FileInputStream file = new FileInputStream(new File("D:\\workspace\\JavaPractice\\readFile\\excelTest.xlsx"));
