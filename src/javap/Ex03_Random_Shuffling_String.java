@@ -12,15 +12,16 @@ public class Ex03_Random_Shuffling_String {
 	}
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Input s,t: ");
-		String s = sc.next();
-		sc.nextLine();
-		String t = sc.next();
-		sc.nextLine();
+		try (Scanner sc = new Scanner(System.in)) {
+			System.out.println("Input s,t: ");
+			String s = sc.next();
+			sc.nextLine();
+			String t = sc.next();
+			sc.nextLine();
 
-		Ex03_Random_Shuffling_String letter = new Ex03_Random_Shuffling_String();
-		letter.addedLetter(s, t);
+			Ex03_Random_Shuffling_String letter = new Ex03_Random_Shuffling_String();
+			letter.addedLetter(s, t);
+		}
 	}
 
 }

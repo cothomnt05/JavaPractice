@@ -56,11 +56,12 @@ public class Ex01_Roman_Numeral {
 	}
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Input roman numeral: ");
-		Ex01_Roman_Numeral num = new Ex01_Roman_Numeral();
-		String romanNum = sc.next();
-		sc.nextLine();
-		System.out.println(romanNum + " cover to an Integer is " + num.coverToAnInteger(romanNum));
+		try (Scanner sc = new Scanner(System.in)) {
+			System.out.println("Input roman numeral: ");
+			Ex01_Roman_Numeral num = new Ex01_Roman_Numeral();
+			String romanNum = sc.next();
+			sc.nextLine();
+			System.out.println(romanNum + " cover to an Integer is " + num.coverToAnInteger(romanNum));
+		}
 	}
 }

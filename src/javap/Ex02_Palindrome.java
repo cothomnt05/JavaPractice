@@ -16,12 +16,13 @@ public class Ex02_Palindrome {
 	}
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Input s: ");
-		String s = sc.next();
-		sc.nextLine();
-		Ex02_Palindrome num = new Ex02_Palindrome();
-		System.out.println("String is a palindrome: " + num.isPalindrome(s));
+		try (Scanner sc = new Scanner(System.in)) {
+			System.out.println("Input s: ");
+			String s = sc.next();
+			sc.nextLine();
+			Ex02_Palindrome num = new Ex02_Palindrome();
+			System.out.println("String is a palindrome: " + num.isPalindrome(s));
+		}
 
 	}
 
