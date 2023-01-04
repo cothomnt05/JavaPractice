@@ -242,6 +242,45 @@ WebUI.deselectOptionByLabel(findTestObject('1.Basic/Topic_08_Handle_User_Action/
 'Deselect option by value: 3 - Three'
 WebUI.deselectOptionByValue(findTestObject('1.Basic/Topic_08_Handle_User_Action/05.DropdownList/Default_DropDown/Multiple_Dropdown'), '3', false)
 
+
+'--------- Dropdown Custom---------'
+'Single select: 1. Click vào dropdown control đó, 2. Select item trong trong dropdown'
+'Fist, click on dropdown control'
+WebUI.click(findTestObject('Custom_DropDown/Single_DropDown/Single_Dropdown_Parent'))
+ 
+// Because these item in dropdown is hidden. If we don't click on dropdown first, we can not select item under it
+'Second, select item on dropdown'
+WebUI.click(findTestObject('Custom_DropDown/Single_DropDown/Single_Dropdown_Child_Option1'))
+
+'Multi select: 1. Click vào dropdown control đó, 2. Select tất cả các items trong dropdown, Or select random item trong dropdown, Or select item theo 1 danh sách bạn muốn chọn'
+'Step 1: click vao dropdown control'
+WebUI.click(findTestObject('Custom_DropDown/Multi_DropDown/Multi_Dropdown_Parent'))
+ 
+// Because these item in dropdown is hidden. If we don't click on dropdown first, we can not select item under it
+'Step 2: Chuan bi 1 vai items de select'
+List<String> selectedItems = ['One', 'Three', 'Four']
+ 
+'Step 3: Tim tat ca cac item element trong dropdown control'
+List<WebElement> listElement = WebUI.findWebElements(findTestObject('Custom_DropDown/Multi_DropDown/Multi_Dropdown_Child'), 2)
+ 
+'Step 4: Duyet qua tung item trong list'
+for(WebElement item in listElement){
+	'Get label of child item'
+	WebElement eleLabel = item.findElement(By.xpath("./span"))
+	String label = eleLabel.getText().trim()
+	 
+	'Get trang thai cua child item: select/unselect'
+	WebElement eleInput = eleLabel.findElement(By.xpath("./input"))
+	boolean state = eleInput.isSelected()
+	 
+	// Check xem child item da duoc check hay chua va label co thuoc danh sach minh da chuan o step 2 khong?
+	// Neu chua --> select
+	// Neu select roi --> bo qua
+	if(selectedItems.contains(label) && !state){
+		eleInput.click()
+	}
+}
+
 */
 
 }
