@@ -338,6 +338,40 @@ String tooltip = WebUI.getText(findTestObject('1.Basic/Topic_08_Handle_User_Acti
 'Verify tooltip displayed correctly'
 WebUI.verifyEqual(tooltip, "Info about the action")
 
+'---------------------- Alert ----------------------'
+
+'Wait For Alert: Keyword này dùng để chờ vài giây để cho alert hiển thị trên UI'
+'Wait for an alert to present in 5 seconds'
+WebUI.waitForAlert(5)
+
+'Verify Alert Present: Kiểm tra xem alert có đang hiển thị trên UI hay không?'
+'Verify Alert Present'
+WebUI.verifyAlertPresent(2)
+
+'Get Alert Text: Get text đang hiển thị trong alert, Được sử dụng cho basic alert, confirmation alert, prompt alert'
+'Get Alert Text to verify'
+String alertText = WebUI.getAlertText()
+
+'Accept Alert: Giả lập hành động của user để click vào button “OK” trong Alert, Được sử dụng cho basic alert, confirmation alert, prompt alert'
+'Accept Alert'
+WebUI.acceptAlert()
+
+'Verify Alert Not Present: Kiểm tra xem alert có đang KHÔNG hiển thị trên UI hay không?'
+'Verify Alert closed'
+WebUI.verifyAlertNotPresent(2)
+
+'Dismiss Alert: Giả lập hành động của user để click vào button “Cancel” trong Alert, Được sử dụng cho confirmation alert, prompt alert'
+'Click Cancel'
+WebUI.dismissAlert()
+
+'Set Alert Text: Giả lập hành động của user để input text vào textbox trong Alert, Được sử dụng cho Prompt Alert'
+'Input text to Alert'
+WebUI.setAlertText("This is Alert text.")
+
+'Authenticate: Keyword này dùng để input username and password vào Basic Authen, Lưu ý: chỉ support cho Windows.'
+'Navigate to site: http://the-internet.herokuapp.com/basic_auth'
+WebUI.authenticate("http://the-internet.herokuapp.com/basic_auth", username, password, 5)
+
 */
 
 }
