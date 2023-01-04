@@ -281,6 +281,44 @@ for(WebElement item in listElement){
 	}
 }
 
+'--------- Popup---------'
+'Wait For Element Visible: Chờ vài giây để element hiển thị trên trang Web'
+"Wait for popup to be visible in 10s"
+WebUI.waitForElementVisible(findTestObject('Popup/testproject/popup'), 10)
+
+'Wait For Element Not Visible: Chờ vài giây để element không còn hiển thị trên trang Web sau khi thực hiện 1 action nào đó'
+"Wait for popup display"
+Boolean isDisplayed = WebUI.waitForElementVisible(findTestObject('Popup/shopee/popup'), 10)
+
+"Check if popup displayed -> Close popup"
+if(isDisplayed){
+WebUI.click(findTestObject('Popup/shopee/btn_Close'))
+}
+
+"Wait for popup NOT visible"
+WebUI.waitForElementNotVisible(findTestObject('Popup/shopee/popup'), 10)
+
+'Verify Element Visible: Kiểm tra xem element có đang hiển thị trên trang Web hay không?'
+"Wait for Popup displayed"
+WebUI.waitForElementVisible(findTestObject('Popup/zingpoll/popup_login'), 2)
+
+"Verify popup displayed (existed in DOM and displayed on UI)"
+WebUI.verifyElementVisible(findTestObject('Popup/zingpoll/popup_login'))
+
+'erify Element Not Visible: Kiểm tra xem element có đang KHÔNG hiển thị trên trang Web hay không?'
+"Verify popup displayed (existed in DOM and displayed on UI)"
+WebUI.verifyElementVisible('Popup/bni/popup')
+ 
+"Close popup"
+WebUI.click(findTestObject('Popup/bni/btn_Close'))
+ 
+"Wait for popup closed. If not wait, this test case will be failed"
+WebUI.waitForElementNotVisible(findTestObject('Popup/bni/popup'), 3)
+ 
+"Verify popup closed"
+WebUI.verifyElementNotVisible(findTestObject('Popup/bni/popup'))
+
+
 */
 
 }
