@@ -87,6 +87,49 @@ WebUI.sendKeys(findTestObject('Page_Login/txt_UserName'), Keys.chord(Keys.CONTRO
 WebUI.setEncryptedText(findTestObject('Page_Login/txt_Password'), 'HwXnxaZD17M=');
 
 
+'--------- Button ---------'
+
+'Click on \'Book Appointment\' button'
+WebUI.click(findTestObject('Page_CuraHomepage/btn_MakeAppointment'));
+
+"Double click to button 'Double-Click Me To See Alert'"
+WebUI.doubleClick(findTestObject('Guru99/btn_DoubleClick'));
+
+"Right click to button 'right click me'"
+WebUI.rightClick(findTestObject('Guru99/btn_RightClick'));
+
+'Verify \'Make Appointment\' button is clickable'
+WebUI.verifyElementClickable(findTestObject('Page_CuraHomepage/btn_MakeAppointment'));
+
+'Verify \'Make Appointment\' button is NOT clickable'
+WebUI.verifyElementNotClickable(findTestObject('Page_CuraHomepage/btn_MakeAppointment'));
+
+'Get status of button Đăng Nhập'
+'if true -> button is disable, else -> button is enabled'
+boolean status = WebUI.getAttribute(findTestObject('Object Repository/1.Basic/Topic_08_Handle_User_Action/01.Textbox_TextArea/btn_Login'), "disabled");
+ 
+'Verify status of button Đăng Nhập'
+WebUI.verifyEqual(status, false);
+
+'Get background color of button Login'
+String backgroundColor = WebUI.getCSSValue(findTestObject('Object Repository/1.Basic/Topic_08_Handle_User_Action/02.Button/nopcommerce/btn_Login'), "background-color");
+
+'Convert RGBA to Hex'
+backgroundColor = convertRGBAToHex(backgroundColor);
+println backgroundColor;
+
+public static String convertRGBAToHex(String backgroundColor) {
+	String[] hexValue = backgroundColor.split("[, rgba()]+")
+	 
+	int hexValue1 = Integer.valueOf(hexValue[1])
+	int hexValue2 = Integer.valueOf(hexValue[2])
+	int hexValue3 = Integer.valueOf(hexValue[3])
+	 
+	String result = String.format("#%02x%02x%02x", hexValue1, hexValue2, hexValue3)
+	return result
+}
+
+
 */
 
 }
