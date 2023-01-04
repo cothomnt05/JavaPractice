@@ -145,6 +145,17 @@ for(item in lstElementCheckbox){
     }
 }
 
+
+'--------- Radio Button ---------'
+'Select radio button: 2.0 Diesel, 103kW'
+WebUI.click(findTestObject('Radio/rad_2.0 Diese'))
+
+"Verify default radio button: 2.0 Diesel, 103kW is unselected"
+WebUI.verifyElementNotChecked(findTestObject('Radio/rad_2.0 Diese'), 10)
+
+"Verify radio button: 2.0 Diesel, 103kW is selected"
+WebUI.verifyElementChecked(findTestObject('Radio/rad_2.0 Diese'), 2)
+
 */
 
 }
