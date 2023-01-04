@@ -130,6 +130,21 @@ public static String convertRGBAToHex(String backgroundColor) {
 }
 
 
+'Định nghĩa sẵn 1 danh sách checkbox cần check'
+List<String> randomCheckBox = ["Anemia", "Arthritis", "Heart Attack"]
+ 
+'Get list of element of checkbox'
+List<WebElement> lstElementCheckbox = WebUI.findWebElements(findTestObject('Checkbox/automationfc/chk_CheckAll_1'), 2)
+ 
+'Check all checkbox'
+for(item in lstElementCheckbox){
+    String itemText = item.getAttribute("value")
+    Boolean isCheck = item.isSelected()
+    if(randomCheckBox.contains(itemText) && !isCheck){
+        item.click()
+    }
+}
+
 */
 
 }
