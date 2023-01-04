@@ -65,6 +65,28 @@ WebUI.setViewPortSize('width', 'height');
 WebUI.closeBrowser();
 
 
+'---------------------- Handle User Action ----------------------'
+
+'https://docs.katalon.com/docs/legacy/katalon-studio-enterprise/keywords/web-ui-keywords/webui-accept-alert'
+' Window -> Katalon Studio References -> Katalon -> Test Case'
+
+
+'--------- Textbox and TextArea ---------'
+
+'Focus on \'Username\' field'
+WebUI.focus(findTestObject('Page_Login/txt_UserName'));
+
+'Input username'
+WebUI.setText(findTestObject('Page_Login/txt_UserName'), Username);
+
+'Press Ctrl+A to select all text in txt_UserName'
+WebUI.sendKeys(findTestObject('Page_Login/txt_UserName'), Keys.chord(Keys.CONTROL, 'a'));
+
+'Set Encrypted Text : Help > Encrypt Text Ex: abc123 > HwXnxaZD17M='
+'Input password'
+WebUI.setEncryptedText(findTestObject('Page_Login/txt_Password'), 'HwXnxaZD17M=');
+
+
 */
 
 }
