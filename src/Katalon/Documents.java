@@ -319,6 +319,25 @@ WebUI.waitForElementNotVisible(findTestObject('Popup/bni/popup'), 3)
 WebUI.verifyElementNotVisible(findTestObject('Popup/bni/popup'))
 
 
+'---------------------- Handle Dynamic Test Object ----------------------'
+'Katalon Studio - Web Testing - Handling Dynamic Objects: https://www.youtube.com/watch?v=H2KToYkjbnI, https://www.youtube.com/watch?v=7l8738hmrtc'
+
+
+'---------------------- ToolTip ----------------------'
+'1.Hover vào button Action > 2.Get nội dung của tooltip > 3.Verify tooltip hiển thị có đúng không?'
+
+'Mouse Over: Giả lập hành động của user để di chuyển con trỏ chuột lên đối tượng được chỉ định'
+'Mouse hover to button Action to display tooltip'
+WebUI.mouseOver(findTestObject('1.Basic/Topic_08_Handle_User_Action/09.ToolTip/tooltip'))
+
+'Get Text: Get nội dung của Tooltip'
+'Get Tooltip'
+String tooltip = WebUI.getText(findTestObject('1.Basic/Topic_08_Handle_User_Action/09.ToolTip/lbl_ToolTip'))
+
+'Verify Equal: Verify tooltip hiển thị đúng hay không?'
+'Verify tooltip displayed correctly'
+WebUI.verifyEqual(tooltip, "Info about the action")
+
 */
 
 }
