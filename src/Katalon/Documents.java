@@ -397,6 +397,29 @@ WebUI.verifyMatch(FilePath, 'C:\\fakepath\\test.txt', false)
 'Close browser'
 WebUI.closeBrowser()
 
+'---------------------- Take screenshot ----------------------'
+'Take Area Screenshot: Take screenshot ở vị trí tọa độ được chỉ định.'
+'Bạn muốn take screenshot tại x: 50, y: 25, width: 100, height: 150 và lưu thành file ‘advertisements.png’ trong project của bạn:'
+WebUI.takeAreaScreenshot(RunConfiguration.getReportFolder() + '/advertisements.png', new Rectangle(50, 25, 100, 150))
+
+'Bạn muốn take screenshot tại x: 50, y: 25, width: 100, height: 1200 nhưng bạn muốn ẩn đi 1 vài đối tượng như button, link, text … và lưu thành file ‘advertisements.png’ trong project của bạn:'
+WebUI.takeAreaScreenshot(RunConfiguration.getProjectDir() + '/advertisements_hide.png', new Rectangle(50, 25, 500, 1200), [findTestObject('1.Basic/Topic_07_WebBrowser_Command/link_Checkboxes')])
+
+'Take Element Screenshot: Take screenshot đối tượng được chỉ định.'
+'Take a screenshot of a specific web element'
+WebUI.takeElementScreenshot(RunConfiguration.getProjectDir() + '/checkboxes.png', findTestObject('1.Basic/Topic_07_WebBrowser_Command/link_Checkboxes'))
+
+'Take Full Page Screenshot: Take screenshot toàn bộ trang web đang hiển thị. Nó bao gồm việc scroll xuống cuối page nếu chiều cao của web hiện tại lớn hơn đô phân giải của màn hình.'
+"Take entire-page screenshot included scroll"
+WebUI.takeFullPageScreenshot(RunConfiguration.getProjectDir() + '/full_view_no_elements.png')
+
+"Take entire-page screenshot but exclude element link_Checkboxes"
+WebUI.takeFullPageScreenshot(RunConfiguration.getProjectDir() + '/full_view_no_elements_hide.png', [findTestObject('1.Basic/Topic_07_WebBrowser_Command/link_Checkboxes')])
+
+'Take Screenshot: Take screenshot trang web đang hiển thị'
+'Take screenshot of current screen'
+WebUI.takeScreenshot(RunConfiguration.getProjectDir() + '/Demo.png')
+
 */
 
 }
