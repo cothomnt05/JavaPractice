@@ -495,6 +495,58 @@ WebUI.verifyElementVisible(findTestObject('1.Basic/Topic_09_Web_Element_Command/
 WebUI.verifyElementNotVisible(findTestObject('1.Basic/Topic_09_Web_Element_Command/helloworld'))
 
 
+'---------------------- Scroll ----------------------'
+'Scroll To Element: Keywork này dùng để scroll to element được chỉ định:'
+'Scroll to \'Book Appointment\' button'
+WebUI.scrollToElement(findTestObject('Page_CuraHomepage/btn_MakeAppointment'), 3)
+
+'Using javascript to scroll'
+
+'Scroll to Element'
+"Get Test Object"
+TestObject testObject = findTestObject('Object Repository/Buoi9/Default_DropDown/ddl_MultiSelect')
+
+"Convert testobject to element"
+WebElement element = WebUiCommonHelper.findWebElement(testObject, 30)
+
+"Scroll to element"
+WebUI.executeJavaScript("arguments[0].scrollIntoView(true);", Arrays.asList(element))
+
+
+'Scroll to Element để cho element đó nằm ở chính giữa màn hình'
+"Get Test Object"
+TestObject testObject = findTestObject('Object Repository/Buoi9/Default_DropDown/ddl_MultiSelect')
+
+"Convert testobject to element"
+WebElement element = WebUiCommonHelper.findWebElement(testObject, 30)
+
+"Scroll to element to middle page"
+WebUI.executeJavaScript("arguments[0].scrollIntoView({block: 'center'});", Arrays.asList(element))
+
+
+'Scroll to bottom of page'
+"Get Test Object"
+TestObject testObject = findTestObject('Object Repository/Buoi9/Default_DropDown/ddl_MultiSelect')
+
+"Convert testobject to element"
+WebElement element = WebUiCommonHelper.findWebElement(testObject, 30)
+
+"Scroll to bottom of page"
+WebUI.executeJavaScript("window.scrollBy(0,document.body.scrollHeight)", null)
+
+
+'Scroll to top of page'
+"Get Test Object"
+TestObject testObject = findTestObject('Object Repository/Buoi9/Default_DropDown/ddl_MultiSelect')
+
+"Convert testobject to element"
+WebElement element = WebUiCommonHelper.findWebElement(testObject, 30)
+
+"Scroll to top of page"
+WebUI.executeJavaScript("window.scrollBy(0, -document.body.scrollHeight)", null)
+
+
+
 */
 
 }
