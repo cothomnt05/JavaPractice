@@ -372,6 +372,31 @@ WebUI.setAlertText("This is Alert text.")
 'Navigate to site: http://the-internet.herokuapp.com/basic_auth'
 WebUI.authenticate("http://the-internet.herokuapp.com/basic_auth", username, password, 5)
 
+
+'---------------------- Upload File ----------------------'
+'Upload File: Keyword này chỉ làm việc được khi thẻ html là input và type = “file”'
+
+'Open browser'
+WebUI.openBrowser('')
+
+'Navigate to site: https://mdbootstrap.com/docs/standard/forms/file/'
+WebUI.navigateToUrl('https://mdbootstrap.com/docs/standard/forms/file/')
+
+'Maximize browser'
+WebUI.maximizeWindow()
+
+'Upload file'
+WebUI.uploadFile(findTestObject('UploadFile/uploadFile'), 'D:\\Katalon Project\\KatalonStudioA1\\Data Files\\test.txt')
+
+'Get Attribute'
+FilePath = WebUI.getAttribute(findTestObject('UploadFile/uploadFile'), 'value')
+
+'Verify Match FilePath and actual File'
+WebUI.verifyMatch(FilePath, 'C:\\fakepath\\test.txt', false)
+
+'Close browser'
+WebUI.closeBrowser()
+
 */
 
 }
