@@ -420,6 +420,81 @@ WebUI.takeFullPageScreenshot(RunConfiguration.getProjectDir() + '/full_view_no_e
 'Take screenshot of current screen'
 WebUI.takeScreenshot(RunConfiguration.getProjectDir() + '/Demo.png')
 
+'---------------------- Web Element Command ----------------------'
+'Get Attribute: Get giá trị của thuộc tính (attribute) của web element'
+"Get attibute of element"
+String attValue = WebUI.getAttribute(findTestObject('1.Basic/Topic_09_Web_Element_Command/checkbox'), "value")
+println "Value = " + attValue
+
+'Get CSS Value: Get giá trị CSS của web element.'
+"Get margin right"
+String cssmarginright = WebUI.getCSSValue(findTestObject('1.Basic/Topic_09_Web_Element_Command/checkbox'), "margin-right")
+println "margin-right = " + cssmarginright
+
+'Get Text: Get Text của web element'
+"Get text of element"
+String text = WebUI.getText(findTestObject('1.Basic/Topic_09_Web_Element_Command/button'))
+println "text: " + text
+
+'Verify Element Text: Verify Element Text có hiển thị trên page UI hay không?'
+"Verify element has text"
+WebUI.verifyElementText(findTestObject('1.Basic/Topic_09_Web_Element_Command/button'), "Submit")
+
+'Verify Text Present: Verify đoạn text có hiển thị trên UI hay không?'
+'Lưu ý: Các bạn hạn chế sử dụng keyword này nhé. Lý do là Keyword này sẽ verify Text có hiển thị trên page UI hay không?'
+'Nhưng nếu đoạn Text bạn verify nó hiển thị ở nhiều nơi trên cùng 1 page, thì mình sẽ không biết được là keyword này sẽ verify đoạn Text nào. Dẫn đến việc mặc dù kết quả trả về là True, nhưng mình ko make sure được là đoạn Text mình muốn verify có hiển thị không nhé.'
+"Verify text present in UI"
+WebUI.verifyTextPresent("Patient Medical History", false)
+
+'Verify Text Not Present: Verify Text có đang không hiển thị trên UI hay không?'
+"Verify text not present in UI"
+WebUI.verifyTextNotPresent("Patient Medical History1", false)
+
+'Verify Element Attribute Value: Verify Web Element có tồn tại giá trị của thuộc tính trong DOM hay không?'
+"Verify checkbox element has attribute value: Anemia"
+WebUI.verifyElementAttributeValue(findTestObject('1.Basic/Topic_09_Web_Element_Command/checkbox'), "value", "Anemia", 2)
+
+'Verify Element Checked: Verify checkbox có đang được check hay không?'
+"Verify checkbox element is checked"
+WebUI.verifyElementChecked(findTestObject('1.Basic/Topic_09_Web_Element_Command/checkbox'), 2)
+
+'Verify Element Not Checked: Verify checkbox có đang KHÔNG được check hay không?'
+"Verify checkbox element is unchecked"
+WebUI.verifyElementNotChecked(findTestObject('1.Basic/Topic_09_Web_Element_Command/checkbox'), 2)
+
+'Verify Element Clickable: Verify Element có thể Click được hay không? Thông thường keyword này sẽ dùng để verify trạng thái của button. Clickable có nghĩa là button đang enable, mà button đang enable thì user mới có thể click được, đúng không 😀'
+"Verify button element is clickable"
+WebUI.verifyElementClickable(findTestObject('1.Basic/Topic_09_Web_Element_Command/button'))
+
+'Verify Element Not Clickable: Verify Element có thể KHÔNG click được hay không? Keyword này chỉ được sử dụng với Element có tag = input với attribute = disable'
+"For button is disabled, verify button element is no clickable"
+WebUI.verifyElementNotClickable(findTestObject('1.Basic/Topic_09_Web_Element_Command/button'))
+
+'Verify Element Has Attribute: Verify thuộc tính của Web Element có tồn tại hay không?'
+"Verify button element has attribute: data-component"
+WebUI.verifyElementHasAttribute(findTestObject('1.Basic/Topic_09_Web_Element_Command/button'), "data-component", 2)
+
+'Verify Element Not Has Attribute: Verify thuộc tính của Web Element có KHÔNG tồn tại hay không?'
+"Verify button element not has attribute: test"
+WebUI.verifyElementNotHasAttribute(findTestObject('1.Basic/Topic_09_Web_Element_Command/button'), "test", 2)
+
+'Verify Element Not Present: Verify Web Element có KHÔNG tồn tại trong DOM hay không?'
+"Verify element not present in DOM"
+WebUI.verifyElementNotPresent(findTestObject('1.Basic/Topic_09_Web_Element_Command/notPresent'), 2)
+
+'Verify Element Present: Verify Web Element có tồn tại trong DOM hay không?'
+"Verify element present in DOM"
+WebUI.verifyElementPresent(findTestObject('1.Basic/Topic_09_Web_Element_Command/helloworld'), 2)
+
+'Verify Element Visible: Verify Web Element có hiển thị trên page UI hay không?'
+"Verify element visible: present in DOM and display on UI"
+WebUI.verifyElementVisible(findTestObject('1.Basic/Topic_09_Web_Element_Command/button_Start'))
+
+'Verify Element Not Visible: Verify Web Element có đang KHÔNG hiển thị trên page UI hay không?'
+"Verify element not visible: present in DOM but not display on UI"
+WebUI.verifyElementNotVisible(findTestObject('1.Basic/Topic_09_Web_Element_Command/helloworld'))
+
+
 */
 
 }
